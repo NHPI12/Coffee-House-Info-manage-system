@@ -90,10 +90,10 @@ class ProductTable:
         #btnSearch = Button(btnLabelSearch, text="Seach input",bg = "saddle brown",fg = "white",font = ("arial", 12,"bold"),width = 15,padx = 10,pady = 6,command= self.Search_data)
         #btnSearch.grid(row=2, column=0,padx = 2, pady= 2)
 
-        #btnLabelQuit = LabelFrame(Buttonframe,bd = 2, bg = "black")     #Quit Button
-        #btnLabelQuit.grid(row = 2, column= 1, padx= 5, pady = 2 )
-        #btnQuit = Button(btnLabelQuit,text = "Quit",bg = "saddle brown",fg = "white",font = ("arial", 12,"bold"),width = 15,padx = 10,pady = 6,command= self.Quit_product )
-        #btnQuit.grid(row=2,column=1,padx= 5, pady =2)
+        btnLabelQuit = LabelFrame(Buttonframe,bd = 2, bg = "black")     #Quit Button
+        btnLabelQuit.grid(row = 2, column= 0, padx= 5, pady = 2 )
+        btnQuit = Button(btnLabelQuit,text = "Quit",bg = "saddle brown",fg = "white",font = ("arial", 12,"bold"),width = 15,padx = 10,pady = 6,command= root.destroy )
+        btnQuit.grid(row=2,column=0,padx= 5, pady =2)
 
 
         
@@ -183,17 +183,3 @@ class ProductTable:
         self.product_type.set("")
         self.product_price.set("")
         
-    #def Search_data(self):
-    #    connect = mysql.connector.connect(host = "127.0.0.1", username= "root", password = "123456789", database= "mydata")
-    #    c = connect.cursor(buffered=True)
-    #    insert_query = "SELECT product_id,product_name,product_type,product_price FROM product WHERE product_id = %s"
-    #    vals = (self.product_ID.get(),)
-    #    c.execute(insert_query,vals)
-    #    connect.commit()
-    #    connect.close()
-
-    #def Quit_product(self):
-    #    messQuite = messagebox.showinfo("Coffee House Information Management System","Do you want to exit? ")
-    #    if messQuite>0:
-    #        root.destroy()
-    #        return

@@ -32,7 +32,7 @@ class EmployeeTable:
         DataframeRight = LabelFrame(Dataframe,bd =5,relief= RIDGE,padx=10,font=("Arial",12,"bold"),text="Input bar")
         DataframeRight.place(x = 990, y = 5, width =460, height=350)
 
-         #button frame
+        #button frame
         Buttonframe = Frame(self.root,bd = 10,relief=RIDGE)
         Buttonframe.place(x=990,y=530,width=540, height = 260)   
 
@@ -95,10 +95,10 @@ class EmployeeTable:
         #btnSearch = Button(btnLabelSearch, text="Seach input",bg = "saddle brown",fg = "white",font = ("arial", 12,"bold"),width = 15,padx = 10,pady = 6,command= self.Search_data)
         #btnSearch.grid(row=2, column=0,padx = 2, pady= 2)
 
-        #btnLabelQuit = LabelFrame(Buttonframe,bd = 2, bg = "black")     #Quit Button
-        #btnLabelQuit.grid(row = 2, column= 1, padx= 5, pady = 2 )
-        #btnQuit = Button(btnLabelQuit,text = "Quit",bg = "saddle brown",fg = "white",font = ("arial", 12,"bold"),width = 15,padx = 10,pady = 6,command= self.Quit_employee )
-        #btnQuit.grid(row=2,column=1,padx= 5, pady =2)
+        btnLabelQuit = LabelFrame(Buttonframe,bd = 2, bg = "black")     #Quit Button
+        btnLabelQuit.grid(row = 2, column= 0, padx= 5, pady = 2 )
+        btnQuit = Button(btnLabelQuit,text = "Quit",bg = "saddle brown",fg = "white",font = ("arial", 12,"bold"),width = 15,padx = 10,pady = 6,command= root.destroy)
+        btnQuit.grid(row=2,column=0,padx= 2, pady =2)
 
 
         
@@ -162,7 +162,7 @@ class EmployeeTable:
         connect.commit()
         self.show_data()
         connect.close()
-        messagebox.showinfo("Update","Fail Successfully")
+        messagebox.showinfo("Update","Update Successfully")
 
     def Delete_data(self):
         connect = mysql.connector.connect(host = "127.0.0.1", username= "root", password = "123456789", database= "mydata")
@@ -190,15 +190,10 @@ class EmployeeTable:
         self.employee_DOB.set("")
         self.employee_position.set("")
         self.employee_phone_number.set("")
-    #def Search_data(self):
-    #    connect = mysql.connector.connect(host = "127.0.0.1", username= "root", password = "123456789", database= "mydata")
-    #    c = connect.cursor()
-    #    insert_query = "SELECT employee_id,employee_name,employee_dob,employee_position,employee_phone_number FROM employee WHERE employee_id = %s"
-    #    vals = (self.employee_ID.get())
-    #    c.execute(insert_query,vals)
+    
 
-    #def Quit_employee(self):
-    #    messQuite = messagebox.showinfo("Coffee House Information Management System","Do you want to exit? ")
-    #    if messQuite>0:
-    #        root.destroy()
-    #        return
+
+
+#root2 = Tk()
+#obj = EmployeeTable(root2)
+#root2.mainloop()
