@@ -194,6 +194,3 @@ class EmployeeTable:
 
 
 
-#root2 = Tk()
-#obj = EmployeeTable(root2)
-#root2.mainloop()
