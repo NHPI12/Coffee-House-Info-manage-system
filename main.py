@@ -1,6 +1,8 @@
 from tkinter import *
-from tkinter import ttk
-import os
+
+import tkinter as tk
+from GUI_employee import EmployeeTable
+from GUI_product import ProductTable
 
 class main_menu:
     def __init__(self,root):
@@ -32,9 +34,11 @@ class main_menu:
         ButtonQuit.grid(row = 0, column = 0, padx =5, pady = 2)
     #Function
     def Employee_open(self):
-        os.system('python d:/Python/Project/GUI_employee.py')
+        new_window = tk.Toplevel()
+        EmployeeTable(new_window)
     def Product_open(self):
-        os.system('python d:/Python/Project/GUI_product.py')
+        product_window = tk.Toplevel()
+        ProductTable(product_window)
     
     
 root = Tk()
